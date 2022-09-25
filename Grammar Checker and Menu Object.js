@@ -42,3 +42,41 @@ storyWords.filter((word) => {
         word.length > 10 && console.log(word)
     }
 )
+
+
+const menu = {
+    _meal : '',
+    _price : 0,
+    set meal(mealToCheck) {
+        if (typeof mealToCheck === 'string') {
+            return this._meal = mealToCheck
+        } else {
+            console.log("error")
+        }
+    },
+
+
+    set price(priceToCheck) {
+        if (typeof priceToCheck === 'number') {
+            return this._price = priceToCheck
+        } else {
+            console.log("error")
+        }
+    },
+
+    get todaysSpecial () {
+        if (this._meal && this._price) {
+            return `Todays Special is ${this._meal} for ${this._price}`
+        } else {
+            return 'Meal or price was not set correctly!'
+        }
+
+    }
+
+};
+
+
+menu.meal = "Pizza"
+menu.price = 20
+
+console.log(menu.todaysSpecial)
