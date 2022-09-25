@@ -80,3 +80,39 @@ menu.meal = "Pizza"
 menu.price = 20
 
 console.log(menu.todaysSpecial)
+
+const team = {
+    _players : [{firstName : "Jason", lastName : "Statham", age : 20},  {firstName : "Bruh", lastName : "Moment", age : 31},
+        {firstName : "Cringe", lastName : "Central", age : 25}],
+    _games : [{opponent : "team1", teamPoints : 100, opponentPoints : 98}, {opponent : "team1", teamPoints : 110, opponentPoints : 99},
+        {opponent : "team1", teamPoints : 120, opponentPoints : 100}],
+    get players() {
+        return this._players
+    },
+    get games() {
+        return this._games
+    },
+
+    addPlayer(newFirstName, newLastName, newAge) {
+        let player = {
+            firstName : newFirstName,
+            lastname : newLastName,
+            age : newAge
+        }
+        this.players.push(player)
+    },
+    addGame (newOpponent, newTeamPoints, newOpponentPoints) {
+        let game = {
+            opponent : newOpponent,
+            teamPoints : newTeamPoints,
+            opponentPoints: newOpponentPoints
+        }
+        this.games.push(game)
+
+    }
+
+}
+team.addPlayer("Bugs", "Bunny", 76)
+team.addGame("Titans", 100, 98)
+console.log(team._players)
+console.log(team._games)
